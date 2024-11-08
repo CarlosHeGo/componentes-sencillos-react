@@ -1,27 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+
+
 
 function ListaTareas(){
-    return
-    (
-        <>
-            <h1>Lista de tareas pendientes: </h1>
-            <ul>
-                <li>
-                    <input type="checkbox" />
-                    <label>Crear repositorio</label>
+
+    const[tareas, setTareas] = useState(['Tarea1','Tarea2'])
+
+    return(
+       <> <ul>
+            {tareas.map((tarea, index) => (
+                <li key={index}>
+                    <input type="checkbox"/>{tarea}
                 </li>
-                <li>
-                    <input type="checkbox" />
-                    <label>Subir tarea</label>
-                </li>
-                <li>
-                    <input type="checkbox" />
-                    <label>Presentar proyecto</label>
-                </li>
-            </ul>
+            ))}
+        </ul>
         </>
     );
-
 }
-
 export default ListaTareas;
